@@ -72,6 +72,7 @@ class Key
 	inline public static var Z = ASCII.Z;
 	
 	inline public static var SPACE     = ASCII.SPACE;
+	inline public static var ENTER     = ASCII.CARRIAGERETURN;
 	inline public static var BACKSPACE = 8;
 	
 	inline public static var LEFT  = 37;
