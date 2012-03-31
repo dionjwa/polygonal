@@ -92,7 +92,7 @@ class IntersectMovingSphereSegment
 			var w = ((u.x - ax) * dx + (u.y - ay) * dy) / lSq;
 			if (w < .0)
 			{
-				//ínitially intersecting with plane?
+				//initially intersecting with plane?
 				if (t1 == .0)
 				{
 					//check distance to A; trying to avoid segment-sphere intersection test

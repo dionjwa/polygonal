@@ -44,7 +44,7 @@ class PointInsideSphere
 	}
 	
 	/** Returns true if the point (<i>px</i>,<i>py</i>) is inside the two-dimensional bounding sphere with center (<i>sx</i>,<i>sy</i>) and radius <i>r</i>.*/
-	inline public static function test5(px:Float, py:Float, sx:Float, sy:Float, r:Float):Bool
+	public static function test5(px:Float, py:Float, sx:Float, sy:Float, r:Float):Bool
 	{
 		var dx = px - sx;
 		var dy = py - sy;

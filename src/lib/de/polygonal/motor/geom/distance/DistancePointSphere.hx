@@ -29,6 +29,7 @@
  */
 package de.polygonal.motor.geom.distance;
 
+import de.polygonal.core.math.Mathematics;
 import de.polygonal.core.math.Vec2;
 import de.polygonal.motor.geom.primitive.Sphere2;
 
@@ -48,6 +49,11 @@ class DistancePointSphere
 	{
 		var dx = px - sx;
 		var dy = py - sy;
-		return (dx * dx + dy * dy) -  r * r;
+		var rSq = r * r;
+		var dSq = dx * dx + dy * dy;
+		if (dSq < rSq)
+			return dSq;
+		else
+			return dSq - rSq;
 	}
 }
