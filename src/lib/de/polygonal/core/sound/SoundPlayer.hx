@@ -372,7 +372,7 @@ class SoundPlayer extends Observable
 			{
 				var t = node.fade == 1 ? 'in' : 'out';
 				s += Sprintf.format('channel %02d | name: %-20s id: %02d | pos: %#4.2f%% vol: %#4.2f rep: %02d [fade %s %d%%]\n',
-					[i++, node.key.ellipsis(20, false), node.id, node.soundChannel.position / node.sound.length, node.soundChannel.soundTransform.volume, node.repeat, t, node.tween.progress * 100]);
+					[i++, node.key.ellipsis(20, false), node.id, node.soundChannel.position / node.sound.length, node.soundChannel.soundTransform.volume, node.repeat, t, node.tween.getProgress() * 100]);
 			}
 			else
 			{
