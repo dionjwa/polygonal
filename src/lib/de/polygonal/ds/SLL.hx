@@ -42,7 +42,7 @@ private typedef SLLNodeFriend<T> =
 
 /**
  * <p>A singly linked list.</p>
- * <p>See <a href="http://lab.polygonal.de/2007/08/13/data-structures-example-linked-lists/" target="_blank">http://lab.polygonal.de/2007/08/13/data-structures-example-linked-lists/</a></p>
+ * <p>See <a href="http://lab.polygonal.de/?p=206" target="_blank">http://lab.polygonal.de/?p=206</a></p>
  * <p><o>Worst-case running time in Big O notation</o></p>
  */
 class SLL<T> implements Collection<T>

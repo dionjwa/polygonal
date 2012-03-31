@@ -36,7 +36,7 @@ import de.polygonal.core.macro.Assert;
 /**
  * <p>A weighted graph.</p>
  * <p>A graph is composed of <em>GraphNode</em> and <em>GraphArc</em> objects.</p>
- * <p>See <a href="http://lab.polygonal.de/2007/06/13/data-structures-example-the-graph-class/" target="_blank">http://lab.polygonal.de/2007/06/13/data-structures-example-the-graph-class/</a></p>
+ * <p>See <a href="http://lab.polygonal.de/?p=185" target="_blank">http://lab.polygonal.de/?p=185/</a></p>
  * <p><o>Worst-case running time in Big O notation</o></p>
  */
 class Graph<T> implements Collection<T>

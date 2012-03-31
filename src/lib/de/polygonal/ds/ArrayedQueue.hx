@@ -47,7 +47,7 @@ private typedef ArrayedQueueFriend<T> =
  * <p>A queue is a linear list for which all insertions are made at one end of the list; all deletions (and usually all accesses) are made at the other end.</p>
  * <p>This is called a FIFO structure (First In, First Out).</p>
  * <p><o>Worst-case running time in Big O notation</o></p>
- * See <a href="http://lab.polygonal.de/2007/05/23/data-structures-example-the-queue-class/" target="_blank">http://lab.polygonal.de/2007/05/23/data-structures-example-the-queue-class/</a></p>
+ * See <a href="http://lab.polygonal.de/?p=189" target="_blank">http://lab.polygonal.de/?p=189</a></p>
  */
 class ArrayedQueue<T> implements Queue<T>
 {

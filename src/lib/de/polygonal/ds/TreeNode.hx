@@ -36,7 +36,7 @@ using de.polygonal.core.math.Mathematics;
 
 /**
  * <p>A tree structure.</p>
- * <p>See <a href="http://lab.polygonal.de/2007/05/15/data-structures-example-the-tree-class/" target="_blank">http://lab.polygonal.de/2007/05/15/data-structures-example-the-tree-class/</a></p>
+ * <p>See <a href="http://lab.polygonal.de/?p=184" target="_blank">http://lab.polygonal.de/?p=184</a></p>
  * <p><o>Worst-case running time in Big O notation</o></p>
  */
 class TreeNode<T> implements Collection<T>
@@ -884,11 +884,12 @@ class TreeNode<T> implements Collection<T>
 		{
 			if (process == null)
 			{
-				var child = children;
+				var child = children, hook;
 				while (child != null)
 				{
+					hook = child.next;
 					if (!_postOrderInternalVisitable(child, userData)) return;
-					child = child.next;
+					child = hook;
 				}
 				
 				#if debug
