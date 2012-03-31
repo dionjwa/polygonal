@@ -112,20 +112,20 @@ class Limits
 	/**
 	 * The largest representable number (single-precision IEEE-754).
 	 */
-	inline public static var FLOAT_MAX = 3.40282346638528e+38;
+	inline public static var FLOAT_MAX = 3.4028234663852886e+38;
 	
 	/**
 	 * The smallest representable number (single-precision IEEE-754).
 	 */
-	inline public static var FLOAT_MIN = -3.40282346638528e+38;
-	
-	/**
-	 * The smallest representable number (double-precision IEEE-754).
-	 */
-	inline public static var DOUBLE_MAX = 1.79769313486231e+308;
+	inline public static var FLOAT_MIN = -3.4028234663852886e+38;
 	
 	/**
 	 * The largest representable number (double-precision IEEE-754).
 	 */
-	inline public static var DOUBLE_MIN = -1.79769313486231e+308;
+	inline public static var DOUBLE_MAX = 1.7976931348623157e+308;
+	
+	/**
+	 * The smallest representable number (double-precision IEEE-754).
+	 */
+	inline public static var DOUBLE_MIN = -1.7976931348623157e+308;
 }

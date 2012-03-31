@@ -349,16 +349,18 @@ class Mathematics
 	}
 	
 	/**
-	 * Calculates the next highest power of 2 of <code>x</code>.
+	 * Calculates the next highest power of 2 of <code>x</code>.<br/>
+	 * <code>x</code> must be in the range 0...(2^30)-1<br/>
+	 * Returns <code>x</code> if already a power of 2.
 	 */
 	inline public static function nextPow2(x:Int):Int
 	{
-		var t = x;
-		t |= (t >> 0x01);
-		t |= (t >> 0x02);
-		t |= (t >> 0x03);
-		t |= (t >> 0x04);
-		t |= (t >> 0x05);
+		var t = x - 1;
+		t |= (t >> 1);
+		t |= (t >> 2);
+		t |= (t >> 4);
+		t |= (t >> 8);
+		t |= (t >> 16);
 		return t + 1;
 	}
 	
@@ -397,20 +399,30 @@ class Mathematics
 	 */
 	inline public static function roundTo(x:Float, y:Float):Float
 	{
-		return round(x / y) * y;
+		#if js
+		return Math.round(x / y) * y;
+		#elseif flash
+		var t:Float = untyped __global__['Math'].round((x / y));
+		return t * y;
+		#else
+		var t = x / y;
+		if (t < Limits.INT32_MAX && t > Limits.INT32_MIN)
+			return round(t) * y;
+		else
+		{
+			t = (t > 0 ? t + .5 : (t < 0 ? t - .5 : t));
+			return (t - t % 1) * y;
+		}
+		#end
 	}
 	
 	/**
-	 * Fast version of <em>Math.round</em>(<code>x</code>).
+	 * Fast version of <em>Math.round</em>(<code>x</code>).<br/>
+	 * Half-way cases are rounded away from zero.
 	 */
 	inline public static function round(x:Float):Int
 	{
-		return
-		#if js
-		Std.int(x > 0 ? x + .5 : x < 0 ? x - .5 : 0);
-		#else
-		cast(x > 0 ? x + .5 : x < 0 ? x - .5 : 0);
-		#end
+		return Std.int(x + (0x4000 + .5)) - 0x4000;
 	}
 	
 	/**
@@ -553,14 +565,7 @@ class Mathematics
 	 */
 	inline public static function maxPrecision(x:Float, precision:Int):Float
 	{
-		if (x == 0)
-			return x;
-		else
-		{
-			var correction = 10;
-			for (i in 0...precision - 1) correction *= 10;
-			return round(correction * x) / correction;
-		}
+		return roundTo(x, Math.pow(10, -precision));
 	}
 	
 	/**
