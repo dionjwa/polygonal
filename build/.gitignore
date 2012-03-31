@@ -1,0 +1,12 @@
+lib/*
+*.properties
+*.txt
+build.xml
+ClassCollector.n
+haxelib.xml
+Run.hx
+run.n
+unittest.bat
+unittest.hxml
+motor-swc.bat
+motor-swc.hxml

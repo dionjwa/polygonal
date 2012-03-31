@@ -1,0 +1,7 @@
+-swf testbed.swf
+-main testbed.Testbed
+-swf-header 600:400:60:333333
+-cp ./src
+-lib polygonal
+--no-traces
+-D font_inline

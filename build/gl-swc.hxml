@@ -1,0 +1,48 @@
+-main ClassCollector
+-neko ClassCollector.n
+-cp ./build
+-cmd neko ClassCollector.n %lib% All10.hx -class -include de.polygonal.gl
+-cmd neko ClassCollector.n %lib% All9.hx -class -include de.polygonal.gl -exclude de.polygonal.ds.mem
+
+--next
+
+-swf %dir%/gl_debug_alchemy.swc
+All10
+-cp %lib%
+-debug
+-D swf-protected
+-D alchemy
+--no-inline
+--macro exclude('All10')
+
+--next
+
+-swf %dir%/gl_release_alchemy.swc
+All10
+-cp %lib%
+-D swf-protected
+-D alchemy
+--no-traces
+--macro exclude('All10')
+
+--next
+
+-swf %dir%/gl_debug.swc
+All10
+-cp %lib%
+-debug
+--no-inline
+-D swf-protected
+--macro exclude('All10')
+
+--next
+
+-swf %dir%/gl_release.swc
+All10
+-cp %lib%
+--no-traces
+-D swf-protected
+--macro exclude('All10')
+-cmd del All10.hx
+-cmd del All9.hx
+-cmd del ClassCollector.n

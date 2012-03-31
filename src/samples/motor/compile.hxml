@@ -1,0 +1,54 @@
+-swf9 testbed.swf
+-main testbed.Testbed
+-swf-version 10
+-swf-header 800:600:60:333333
+-cp ./src
+-lib polygonal
+-D font_inline
+-D generic
+--no-traces
+
+--next
+
+-swf9 testbed-world.swf
+-main testbed.TestbedWorld
+-swf-version 10
+-swf-header 800:600:60:333333
+-cp ./src
+-lib polygonal
+-D font_inline
+-D generic
+--no-traces
+
+--next
+
+-swf9 testbed-manifold.swf
+-main testbed.TestbedManifold
+-swf-version 10
+-swf-header 800:600:60:333333
+-cp ./src
+-lib polygonal
+-D font_inline
+-D generic
+--no-traces
+
+--next
+
+-swf9 testbed-geometry.swf
+-main testbed.TestbedGeometry
+-swf-version 10
+-swf-header 800:600:60:333333
+-cp ./src
+-lib polygonal
+-D font_inline
+-D generic
+--no-traces
+
+--next
+
+-swf9 helloworld.swf
+-main HelloWorld
+-swf-version 10
+-swf-header 800:600:60:ffffff
+-lib polygonal
+-cp ./src

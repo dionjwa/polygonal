@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/tr/html4/frameset.dtd">
+<html>
+	<head>
+		<title>::config.title::</title>
+		<link rel="stylesheet" type="text/css" href="::meta.stylesheet::" />
+	</head>
+	<body>
+		<div id="overview">
+			<a href="index.html" target="_blank"><img src="images/polygonal.png" style="display:block; margin-left: auto; margin-right: auto; padding-top: 100px;"/></a>
+			<h1>::config.title::</h1>
+			<h2>::config.subtitle::</h2>
+			<div id="main">
+				<div style="text-align: center; margin: 10px; font-size: 10px;">The icons used in the template are part of the Eclipse Project and licensed under the EPL: <a href="http://www.eclipse.org/legal/epl-v10.html" target="_blank">http://www.eclipse.org/legal/epl-v10.html</a><br/>
+				The documentation uses <a href="http://code.google.com/p/google-code-prettify/" target="_blank">google-code-prettify</a> for sytax highlighting of source code snippets, license: <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">http://www.apache.org/licenses/LICENSE-2.0</a>
+				</div>
+				
+::if config.generateTodo::
+	::if config.todoLines.length > 0::
+				<p>There are <a href="::config.todoFile::">TODO tasks</a> to be done.</p>
+	::else::
+				<p>There are no pending TODO tasks.</p>
+	::end::
+::end::
+			</div>
+		</div>
+	</body>
+</html>

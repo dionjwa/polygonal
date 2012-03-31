@@ -1,0 +1,22 @@
+-main ClassCollector
+-neko ClassCollector.n
+-cp ./build
+-cmd neko ClassCollector.n %lib% All.hx -class -include de.polygonal -exclude de.polygonal.core.log.handler.FileHandler
+
+--next
+
+-swf %dir%/polygonal_debug.swc
+All
+-cp %lib%
+-debug
+--macro exclude('All')
+-D fdb
+
+--next
+
+-swf %dir%/polygonal.swc
+All
+-cp %lib%
+--macro exclude('All')
+-cmd del All.hx
+-cmd del ClassCollector.n

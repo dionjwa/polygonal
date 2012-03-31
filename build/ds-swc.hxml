@@ -1,0 +1,66 @@
+-main ClassCollector
+-neko ClassCollector.n
+-cp ./build
+-cmd neko ClassCollector.n %lib% All10.hx -class -include de.polygonal.ds
+-cmd neko ClassCollector.n %lib% All9.hx -class -include de.polygonal.ds -exclude de.polygonal.ds.mem
+
+--next
+
+-swf %dir%/ds_debug_alchemy.swc
+All10
+Lambda
+-cp %lib%
+-debug
+--macro exclude('All10')
+-D alchemy
+
+--next
+
+-swf %dir%/ds_release_alchemy.swc
+All10
+Lambda
+-cp %lib%
+--no-traces
+--macro exclude('All10')
+-D alchemy
+
+--next
+
+-swf %dir%/ds_debug.swc
+All10
+Lambda
+-cp %lib%
+-debug
+--macro exclude('All10')
+
+--next
+
+-swf %dir%/ds_release.swc
+All10
+Lambda
+-cp %lib%
+--no-traces
+--macro exclude('All10')
+
+--next
+
+-swf %dir%/ds_debug_fp9.swc
+All9
+Lambda
+-cp %lib%
+-debug
+-swf-version 9
+--macro exclude('All9')
+
+--next
+
+-swf %dir%/ds_release_fp9.swc
+All9
+Lambda
+-cp %lib%
+-swf-version 9
+--no-traces
+--macro exclude('All9')
+-cmd del All10.hx
+-cmd del All9.hx
+-cmd del ClassCollector.n

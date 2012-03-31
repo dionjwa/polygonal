@@ -1,0 +1,30 @@
+-swf9 gpc-simple-example.swf
+-main SimpleExample
+-swf-version 10
+-swf-header 800:600:60:ffffff
+-cp ./src
+-lib polygonal
+-D generic
+--no-traces
+
+--next
+
+-swf9 gpc-britain-arrows-example.swf
+-main BritainArrowsExample
+-swf-version 10
+-swf-header 800:600:60:ffffff
+-cp ./src
+-lib polygonal
+-D generic
+--no-traces
+
+--next
+
+-swf9 gpc-britain-arrows-animated-example.swf
+-main BritainArrowsAnimatedExample
+-swf-version 10
+-swf-header 800:600:60:ffffff
+-cp ./src
+-lib polygonal
+-D generic
+--no-traces

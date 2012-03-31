@@ -1,0 +1,6 @@
+-swf9 astar.swf
+-main TestPathFinder
+-swf-version 10
+-swf-header 640:480:60:ffffff
+-cp ./src
+-lib polygonal

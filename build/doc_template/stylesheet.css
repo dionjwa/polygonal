@@ -1,0 +1,418 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: inherit;
+  vertical-align: baseline;
+}
+:focus0
+{
+  outline: 0;
+}
+body
+{
+  line-height: 1;
+  color: #000;
+  background: white;
+  font-family: Helvetica, Geneva, sans-serif;
+  font-size: 12px;
+}
+ul
+{
+  margin-left: 10px;
+  line-height: 1.4em;
+  list-style-image: url(images/arrow.png);
+}
+table
+{
+  border-collapse: separate;
+  border-spacing: 0;
+}
+caption, th, td
+{
+  text-align: left;
+  font-weight: normal;
+}
+blockquote:before, blockquote:after, q:before, q:after
+{
+  content: "";
+}
+blockquote, q
+{
+  quotes: "" "";
+}
+a, a:active, a:visited
+{
+  color: #000;
+}
+#class-frame
+{
+  min-height: 600px;
+}
+.type-frame
+{
+  margin: 0;
+  padding: 10px;
+}
+#types-frame, #packages-frame
+{
+  margin: 0;
+}
+ul.types, ul.packages, #packages-header ul
+{
+  margin: 5px 5px 10px 5px;
+}
+#types-frame h1, #packages-frame h1
+{  
+  font-weight: bold;
+  padding: 2px;
+  color: black;
+  text-align: center;
+}
+#packages-frame h2
+{
+  padding: 2px;
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+.type-frame h1
+{
+  font-family: monospace;
+  font-size: 18px;
+  background-repeat: no-repeat;
+  padding: 0 0 10px 20px;
+}
+ul.types li
+{
+  background-repeat: no-repeat;
+  min-height: 16px;
+  padding-left: 18px;
+}
+.todo
+{
+  background-image: url("images/todo.png");
+}
+.member .platforms
+{
+  padding: 4px 16px;
+}
+.member .platforms-list
+{
+  padding: 4px 16px;
+  font-weight: bold;
+}
+#packages-frame li, #types-frame li
+{
+  background-repeat: no-repeat;
+  min-height: 16px;
+  padding-left: 18px;
+}
+#packages-frame ul.packages li
+{
+  background-image: url("images/package.png");
+}
+#packages-header li
+{
+  font-weight: bold;
+}
+.keyword
+{
+}
+#todo h1, #overview h1
+{
+  font-weight: bold;
+  padding: 2px;
+  color: black;
+  text-align: center;
+}
+#overview
+{
+  border-left: 1px solid #ddd;
+  min-height: 600px;
+}
+#todo h2, #overview h2
+{
+  padding: 2px;
+  text-align: center;
+  margin-bottom: 0.75em;
+}
+#main
+{
+}
+ul.todolist
+{
+  margin: 0.5em 0;
+}
+ul.todolist li
+{
+  background-repeat: no-repeat;
+  min-height: 16px;
+  padding-left: 18px;
+  background-image: url("images/todobullet.png");
+}
+em
+{
+  font-family: monospace;
+  font-weight: normal;
+  font-style: italic;
+  padding-right: 2px;
+}
+mark
+{
+  font-family: monospace;
+  font-weight: normal;
+  padding: 2px;
+  background-color: #C6FFC6;
+}
+a.showHideLink
+{
+  padding-left: 8px;
+  color: white;
+  font-size: 12px;
+}
+.hideInheritedVar
+{
+  display: none;
+}
+.showInheritedVar
+{
+  display: inline;
+}
+.hideInheritedMethod
+{
+  display: none;
+}
+.showInheritedMethod
+{
+  display: inline;
+}
+.overview
+{
+  background-image: url("images/overview.png");
+}
+.alias
+{
+  background-image: url("images/alias.png");
+}
+.class
+{
+  background-image: url("images/class.png");
+}
+.interface
+{
+  background-image: url("images/interface.png");
+}
+.typedef
+{
+  background-image: url("images/typedef.png");
+}
+.enum
+{
+  background-image: url("images/enum.png");
+}
+pre
+{
+  font-family: monospace;
+  background-color: #EEE;
+  padding: 4px;
+}
+.console
+{
+  background-color: black;
+  color: #CCC;
+}
+.alltypes
+{
+  background-image: url("images/alltypes.png");
+}
+.doc
+{
+  margin: 12px 0;
+  line-height: 16px;
+}
+.doc p:first-child
+{
+  font-size: 16px;
+  font-weight: bold;
+}
+.doc ul
+{
+  padding-left: 20px;
+}
+p
+{
+  margin-bottom: 0.5em;
+}
+.members-panel
+{
+  min-width: 500px;
+  margin-bottom: 1px;
+}
+.members-panel h2
+{
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 0 8px 4px;
+  background-color: #666;
+}
+.member .header
+{
+  margin-top: 20px;
+}
+.member .header h3
+{
+  color: black;
+  background-color: #CCC;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 4px;
+  display:inline;
+  white-space: nowrap;
+  font-family: monospace;
+  font-size: 12px;
+}
+.member .header h3 .name
+{
+  background-color: #666;
+  padding: 4px;
+  display:inline;
+  color: white;
+}
+.member .body
+{
+  margin-top: 10px;
+  padding-top: 0;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #CCC;
+}
+dt
+{
+  display: block;
+  float: left;
+  line-height: 1.4em;
+  background-color: #fff;
+  padding-left: 18px;
+}
+dl
+{
+}
+.header dl
+{
+  margin-top: 10px;
+}
+dl > .type
+{
+  background: transparent url("images/type.png") no-repeat scroll -2px 50%;
+}
+dl > .definedin
+{
+  background: transparent url("images/definedin.png") no-repeat scroll -3px 50%;
+}
+dl > .implements
+{
+  background: transparent url("images/implements.png") no-repeat scroll -2px 50%;
+}
+dl > .extends
+{
+  background: transparent url("images/extends.png") no-repeat scroll -2px 50%;
+}
+dl > .subclasses
+{
+  background: transparent url("images/subclasses.png") no-repeat scroll -2px 50%;
+}
+.returns
+{
+  background: transparent url("images/returns.png") no-repeat scroll -2px 50%;
+}
+.throws
+{
+  background: transparent url("images/throws.png") no-repeat scroll -2px 50%;
+}
+.parameter
+{
+  background: transparent url("images/parameter.png") no-repeat scroll -2px 50%;
+}
+.see
+{
+  background: transparent url("images/see.png") no-repeat scroll -2px 50%;
+}
+.deprecated
+{
+  background: transparent url("images/deprecated.png") no-repeat scroll -2px 50%;
+}
+.inherited
+{
+  background: transparent url("images/extends.png") no-repeat scroll -2px 50%;
+}
+.overrides
+{
+  background: transparent url("images/overrides.png") no-repeat scroll 0 50%;
+}
+dd
+{
+  line-height: 1.4em;
+  margin: 2px;
+  margin-left: 110px;
+}
+dd .param
+{
+  font-family: monospace;
+  background-color: #CCC;
+  padding: 1px;
+}
+dd code, .comment code, .doc p code
+{
+  font-family: monospace;
+  font-weight: normal;
+}
+dd ol
+{
+  margin-left: 30px;
+}
+.comment
+{
+  line-height: 1.2;
+  margin-top: 10px;
+}
+.comment:first-line
+{
+  font-weight: bold;
+  font-size: 13px;
+  color: #222;
+}
+.comment p:first-child
+{
+ background-color: black;
+ font-weight: bold;
+}
+.comment li
+{
+  margin-left: 20px;
+}
+
+warn
+{
+  background: transparent url("images/warn.png") no-repeat scroll -2px 50%;
+  padding-left: 14px;
+}
+
+o
+{
+  display: block;
+  background: transparent url("images/bigo.png") no-repeat scroll 0px 50%;
+  padding: 0 0px 0px 20px;
+}
