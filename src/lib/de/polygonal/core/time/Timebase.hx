@@ -34,7 +34,6 @@ import de.polygonal.core.event.Observable;
 import de.polygonal.core.fmt.Sprintf;
 import de.polygonal.core.math.Mathematics;
 import de.polygonal.core.macro.Assert;
-import haxe.Timer;
 
 /**
  * A Timebase is a constantly ticking source of time.
@@ -101,19 +100,12 @@ class Timebase extends Observable
 	var _halted:Bool;
 	
 	#if js
-	var _timer:haxe.Timer;
+	var _requestAnimFrame:Dynamic;
 	#end
 	
 	function new()
 	{
 		super(100);
-		
-		#if (flash || cpp)
-		flash.Lib.current.addEventListener(flash.events.Event.ENTER_FRAME, _onEnterFrame);
-		#elseif js
-		_timer = new haxe.Timer(33);
-		_timer.run = _step;
-		#end
 		
 		useFixedTimeStep  = true;
 		_tickRate         = 1 / 60;
@@ -127,6 +119,34 @@ class Timebase extends Observable
 		_gameTimeDelta    = 0;
 		_realTimeDelta    = 0;
 		_past             = _stamp();
+		
+		#if (flash || cpp)
+		flash.Lib.current.addEventListener(flash.events.Event.ENTER_FRAME, _onEnterFrame);
+		#elseif js
+		_requestAnimFrame = function(cb:Dynamic):Void
+		{
+			var w:Dynamic = js.Lib.window;
+			var f:Dynamic =
+			if (w.requestAnimationFrame != null)
+				w.requestAnimationFrame;
+			else
+			if (w.webkitRequestAnimationFrame != null)
+				w.webkitRequestAnimationFrame;
+			else
+			if (w.mozRequestAnimationFrame != null)
+				w.mozRequestAnimationFrame;
+			else
+			if (w.oRequestAnimationFrame != null)
+				w.oRequestAnimationFrame;
+			else
+			if (w.msRequestAnimationFrame != null)
+				w.msRequestAnimationFrame;
+			else
+				function(x) { w.setTimeout(x, _tickRate * 1000); };
+			f(cb);
+		}
+		_step();
+		#end
 	}
 	
 	/**
@@ -143,9 +163,7 @@ class Timebase extends Observable
 		#if (flash || cpp)
 		flash.Lib.current.removeEventListener(flash.events.Event.ENTER_FRAME, _onEnterFrame);
 		#elseif js
-		_timer.stop();
-		_timer.run = null;
-		_timer = null;
+		_requestAnimFrame = null;
 		#end
 	}
 	
@@ -303,6 +321,11 @@ class Timebase extends Observable
 	
 	function _step()
 	{
+		#if js
+		if (_requestAnimFrame == null) return;
+		_requestAnimFrame(_step);
+		#end
+		
 		if (_halted) return;
 		
 		var now = _stamp();
