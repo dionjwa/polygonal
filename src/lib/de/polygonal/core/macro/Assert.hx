@@ -67,7 +67,7 @@ class Assert
 		
 		var p = Context.currentPos();
 		var econd = {expr: EBinop(OpNotEq, {expr: EConst(CIdent('true')), pos: p}, predicate), pos: p};
-		var eif = {expr: EThrow({expr: ENew({name: 'ASE', pack: ['de', 'polygonal'], params: []}, [info]), pos: p}), pos: p};
+		var eif = {expr: EThrow({expr: ENew({name: 'ASE', pack: ['de', 'polygonal'], params: [], sub:null}, [info]), pos: p}), pos: p};
 		return {expr: EIf(econd, eif, null), pos: p};
 	}
 	
