@@ -66,18 +66,20 @@ class Limits
 	
 	/**
 	 * Min value, signed integer.<br/>
-	 * Equals 0x40000000 when targeting neko, otherwise 0x80000000.
-	 */
+	 * Equals 0xC0000000 when targeting neko, otherwise 0x80000000.
+	 * See http://haxe.org/manual/basic_types
+	 */	
 	inline public static var INT32_MIN =
 	#if neko
-	0x40000000;
+	0xC0000000;
 	#else
 	0x80000000;
 	#end
 	
 	/**
 	 * Max value, signed integer.<br/>
-	 * Equals 0x3fffffff when targeting neko, otherwise 0x7fffffff.
+	 * Equals 0x3FFFFFFF when targeting neko, otherwise 0x7fffffff.
+	 * See http://haxe.org/manual/basic_types
 	 */
 	inline public static var INT32_MAX =
 	#if neko
@@ -89,11 +91,11 @@ class Limits
 	/**
 	 * Max value, unsigned integer.<br/>
 	 * Equals 0x7fffffff when targeting neko, otherwise 0xffffffff.
-	 * 
+	 * See http://haxe.org/manual/basic_types
 	 */
 	inline public static var UINT32_MAX =
 	#if neko
-	0x7fffffff;
+	0x3FFFFFFF;
 	#else
 	0xffffffff;
 	#end
